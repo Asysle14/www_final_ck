@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Điện thoại</title>
+</head>
+<body>
+<a href="/dienthoai/list"></a>
+<button><a href="/dienthoai/add">Thêm mới</a></button>
+
+<div>
+    <form action="/dienthoai/search" method="get">
+        <input type="text" name="keyword" placeholder="Nhập tên điện thoại" th:value="${keyword}">
+        <button type="submit">Tìm kiếm</button>
+        <button type="button" onclick="window.location.href='/dienthoai/list'">Clear</button>
+
+    </form>
+</div>
+
+<table border="1">
+    <tr>
+        <th>Mã điện thoại</th>
+        <th>Tên điện thoại</th>
+        <th>Địa chỉ</th>
+        <th>Giá vốn</th>
+        <th>Loại</th>
+        <th>Nhà cung cấp</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+    </tr>
+    <tbody>
+    <tr th:each="dienthoai : ${listDienThoai}">
+        <td th:text="${dienthoai.getMaDienThoai()}"></td>
+        <td th:text="${dienthoai.getTenDienThoai()}"></td>
+        <td th:text="${dienthoai.getDiaChi()}"></td>
+        <td th:text="${dienthoai.getGiaVon()}"></td>
+        <td th:text="${dienthoai.getLoai()}"></td>
+        <td th:text="${dienthoai.getNhaCungCap()}"></td>
+        <td>
+            <a th:href="@{/dienthoai/edit(id=${dienthoai.getMaDienThoai()})}">Sửa</a>
+        </td>
+        <td>
+            <a th:href="@{/dienthoai/delete(id=${dienthoai.getMaDienThoai()})}">Xóa</a>
+        </td>
+
+    </tr>
+
+
+    </tbody>
+</table>
+</body>
+</html>

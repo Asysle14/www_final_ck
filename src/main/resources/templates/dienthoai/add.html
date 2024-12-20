@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Điện Thoại</title>
+</head>
+<body>
+<h1>Add Điện Thoại</h1>
+<form action="#" th:action="@{/dienthoai/add}" method="post">
+    <div>
+        <label for="maDienThoai">Mã Điện Thoại:</label>
+        <input type="text" id="maDienThoai" readonly/>
+    </div>
+    <div>
+        <label for="tenDienThoai">Tên Điện Thoại:</label>
+        <input type="text" id="tenDienThoai" name="tenDienThoai" required/>
+    </div>
+    <div>
+        <label for="diaChi">Địa Chỉ:</label>
+        <input type="text" id="diaChi" name="diaChi" required/>
+    </div>
+    <div>
+        <label for="giaVon">Giá Vốn:</label>
+        <input type="number" id="giaVon" name="giaVon" required/>
+    </div>
+    <div>
+        <label for="loai">Loại:</label>
+        <input type="text" id="loai" name="loai" required/>
+    </div>
+    <div>
+        <label for="nhaCungCap">Nhà Cung Cấp:</label>
+        <input type="text" id="nhaCungCap" name="nhaCungCap" required/>
+    </div>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+<a href="/dienthoai/list">Back to list</a>
+</body>
+</html>
